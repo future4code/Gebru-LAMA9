@@ -10,5 +10,5 @@ export interface IUserRepository {
         role: string
       ): Promise<void>
 
-    getUserByEmail(email: string): Promise<User>  
+    getUserByEmail(email: string): Promise<User>
 }

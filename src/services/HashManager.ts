@@ -1,6 +1,7 @@
 import * as bcrypt from "bcryptjs";
+import { IHashManger } from "../ports/Ports";
 
- class HashManager {
+ export class HashManager implements IHashManger {
 
     public async hash(text: string): Promise<string> {
         const rounds = 12;
@@ -14,4 +15,3 @@ import * as bcrypt from "bcryptjs";
     }
 }
 
-export default new HashManager()

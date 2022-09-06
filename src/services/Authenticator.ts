@@ -1,8 +1,10 @@
 import * as jwt from "jsonwebtoken";
+import { IAuthenticator } from "../ports/Ports";
 
- class Authenticator {
-  public generateToken(input: AuthenticationData,
-    expiresIn: string = process.env.ACCESS_TOKEN_EXPIRES_IN!): string {
+
+export class Authenticator implements IAuthenticator {
+  private static expiresIn: number = 1200;
+  public generateToken(input: AuthenticationData): string {
     const token = jwt.sign(
       {
         id: input.id,
@@ -10,7 +12,7 @@ import * as jwt from "jsonwebtoken";
       },
       process.env.JWT_KEY as string,
       {
-        expiresIn,
+        expiresIn: Authenticator.expiresIn,
       }
     );
     return token;
@@ -26,9 +28,7 @@ import * as jwt from "jsonwebtoken";
   }
 }
 
-export default new Authenticator();
-
-interface AuthenticationData {
+export interface AuthenticationData {
   id: string;
   role?: string;
 }
