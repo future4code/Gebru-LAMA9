@@ -1,12 +1,21 @@
+GET http://localhost:3000/band
+
+###
+GET http://localhost:3000/band?id=09feb423-2070-4325-934d-087c98561dc1
+###
+
+GET http://localhost:3000/band?name=paralamas
+
+###
 POST http://localhost:3000/user/signup
 Content-Type: application/json 
 
 // cadastro de usuário lama
 {
-    "email": "benjamin@email.com",
-    "name": "benjamin",
-    "password": "benjamin123",
-     "role": "ADMIN"
+    "email": "vitin@email.com",
+    "name": "vitin",
+    "password": "vitin123",
+     "role": ""
 }
 ###
 
@@ -17,4 +26,16 @@ Content-Type: application/json
 {
     "email": "benjamin@email.com",
     "password": "benjamin123"
+}
+###
+
+POST http://localhost:3000/band/cadastro
+Content-Type: application/json 
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDNlZTM5LTcwZTUtNDYxMi1iNDRmLWFjNWJlM2QwYjIxZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MjU5NjQwOSwiZXhwIjoxNjYyNTk3NjA5fQ.XCOHgf6dYC52-O7G1XlKaEHqy8Zn9X_m7gu-wKURkl4
+
+// cadastro de banda
+{
+    "name": "mala 100",
+    "musicGenre": "forror",
+    "responsible": "murilo2"
 }
