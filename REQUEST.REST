@@ -1,0 +1,20 @@
+POST http://localhost:3000/user/signup
+Content-Type: application/json 
+
+// cadastro de usuário lama
+{
+    "email": "benjamin@email.com",
+    "name": "benjamin",
+    "password": "benjamin123",
+     "role": "ADMIN"
+}
+###
+
+POST http://localhost:3000/user/login
+Content-Type: application/json 
+
+// login de usuário lama
+{
+    "email": "benjamin@email.com",
+    "password": "benjamin123"
+}
