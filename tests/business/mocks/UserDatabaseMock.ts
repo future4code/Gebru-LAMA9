@@ -12,9 +12,5 @@ export class UserDatabaseMock implements IUserRepository {
         } else {
             return undefined
         }
-           
-        
     } 
-
-    
 }
