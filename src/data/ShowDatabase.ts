@@ -1,5 +1,5 @@
 import { BaseError } from "../error/BaseError";
-import { IShow, IShowDB } from "../model/Show";
+import { IShorByDay, IShow, IShowDB } from "../model/Show";
 import { IShowDatabaseRepository } from "../repository/showDatabaseRepository";
 import { BaseDatabase } from "./BaseDatabase";
 
@@ -34,5 +34,22 @@ export class ShowDatabase extends BaseDatabase implements IShowDatabaseRepositor
         } catch (error: any) {
             throw new BaseError(error.sqlMessage, error.code)
         }
+    }
+
+    public async getShowByDay(weekDay: string): Promise<IShorByDay[]> {
+    
+      try {
+       const showByWeekDay: IShorByDay[] = await this.getConnection()
+        .select("LAMA_SHOWS.week_day", "LAMA_BANDS.name", "LAMA_BANDS.music_genre")
+        .from("LAMA_BANDS")
+        .innerJoin("LAMA_SHOWS", "LAMA_BANDS.id", "LAMA_SHOWS.band_id")
+        .where("week_day", "=", weekDay)
+        .orderBy("start_time", "ASC")
+
+        return showByWeekDay as IShorByDay[]
+        
+      } catch (error: any) {
+        throw new BaseError(error.sqlMessage, error.code)
+      }
     }
 }

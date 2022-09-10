@@ -46,14 +46,13 @@ export class RegisterBandsBusiness {
         }
     }
 
-    async getBandById (name: string, id: string): Promise<IBand>{
+    async getBandById (name: string): Promise<IBand>{
         try {
-            if(!name || !id) {
-                name = "%",
-                id = "%"
+            if(!name) {
+                name = "%"
             }
 
-           const bandAll = await this.registerDatabase.getRegisterBandbyId(name, id)
+           const bandAll = await this.registerDatabase.getRegisterBandbyId(name)
 
            if(!bandAll) {
             throw new BaseError("Informe o id o nome da banda na query!", 402)

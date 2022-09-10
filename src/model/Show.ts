@@ -21,8 +21,14 @@ export interface IShowDTO {
 
 export interface IShowDB {
     id: string,
-    weekDay: DayWeek,
+    week_day: DayWeek,
     startTime: number,
     start_time: number,
     bandId: string
+}
+
+export interface IShorByDay {
+    week_day: string,
+    name: string,
+    music_genre: string
 }

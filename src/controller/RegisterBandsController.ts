@@ -29,9 +29,8 @@ export class RegisterBandsController {
     public async getBandByIdController(req: Request, res: Response): Promise<void>{
         try {
             const name = req.query.name as string;
-            const id = req.query.id as string;
-
-            const bands = await this.resgisterBandsBusiness.getBandById(name, id)
+         
+            const bands = await this.resgisterBandsBusiness.getBandById(name)
 
             res.status(200).send(bands);
             

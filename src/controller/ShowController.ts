@@ -27,4 +27,17 @@ export class ShowController {
             res.status(400).send({ error: error.message });
         }
     }
+
+    async getShowByDayController(req: Request, res: Response): Promise<void> {
+        try {
+            const weekDay = req.params.weekDay as string;
+
+            const showByWeekDay = await this.showBusiness.getShowByWeekDayBusiness(weekDay);
+
+            res.status(201).send({showWeekDay: showByWeekDay});
+            
+        } catch (error: any) {
+            res.status(400).send({ error: error.message });
+        }
+    }
 }
