@@ -39,3 +39,15 @@ Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDNlZTM5LTcwZTUtN
     "musicGenre": "forror",
     "responsible": "murilo2"
 }
+
+###
+POST http://localhost:3000/show/create/bd4c20e1-275f-4cd9-b3ef-30cf56fe5e54
+Content-Type: application/json 
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDNlZTM5LTcwZTUtNDYxMi1iNDRmLWFjNWJlM2QwYjIxZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2Mjc2OTg2MCwiZXhwIjoxNjYyNzcxMDYwfQ.wGvLpRUSwPMkuEHcTnGxDxc4S5Itb1QPQRlYVOXCItI
+
+# endoint de criar show
+{
+    "weekDay": "SABADO",
+    "startTime": 20.00,
+    "endTime": 22.00
+}

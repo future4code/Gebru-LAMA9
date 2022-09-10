@@ -51,7 +51,5 @@ export class RegisterBandsDatabase extends BaseDatabase implements IRegisterBand
             throw new BaseError(error.sqlMessage, error.code)
         }
     }
-
 }
 
-// 
