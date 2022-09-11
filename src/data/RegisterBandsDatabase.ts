@@ -37,13 +37,12 @@ export class RegisterBandsDatabase extends BaseDatabase implements IRegisterBand
             throw new BaseError(error.sqlMessage, error.code)
         }
     }
-    public async getRegisterBandbyId (name: string ,id: string):Promise<IBand> {
-
+    public async getRegisterBandbyId(name: string ):Promise<IBand> {
+       
         try {
            const bands: IBand = await this.getConnection()
            .select("*") 
            .where("name", "like", `%${name}%`)
-           .where("id", "like",`%${id}%`)
            .from(RegisterBandsDatabase.USER_TABLE)
             return bands
 

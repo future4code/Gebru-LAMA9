@@ -16,4 +16,5 @@ const showBusiness = new ShowBusiness(showDatabase, idGenerator, authenticator);
 const showController = new ShowController(showBusiness);
 
 
+showRouter.get("/:weekDay", (res, req) => showController.getShowByDayController(res,req));
 showRouter.post("/create/:bandId", (res, req) => showController.createShowController(res, req));
