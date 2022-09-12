@@ -8,7 +8,7 @@ export class ShowDatabase extends BaseDatabase implements IShowDatabaseRepositor
   
     private static LAMA_SHOWS = "LAMA_SHOWS"
 
-    public async createShow(show: IShow): Promise<void> {
+    public async createShow(show: IShow): Promise<void> { 
    
         try {
             await this.getConnection().insert(

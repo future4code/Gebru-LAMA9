@@ -49,17 +49,7 @@ export class ShowBusiness  {
                     throw new BaseError("show não pode passar das 23 horas!", 402)
                 }
 
-                // const startTimeString = startTime.toString()
-                // const endTimeString = endTime.toString()
-
-                // if(startTimeString.includes(".")) {
-                //     throw new BaseError("Só horás exatas são válidas!", 402)
-                // }
-
-                // if(endTimeString.includes(".")) {
-                //     throw new BaseError("Só horás exatas são válidas!", 402)
-                // }
-
+             
                 if(!token) {
                     throw new BaseError("É necessário passar o token no herders authorization", 422)
                 }
@@ -69,12 +59,6 @@ export class ShowBusiness  {
                 if(tokenData.role !== "ADMIN") {
                     throw new BaseError("Somente ADMINs pode cadastrar shows!", 401);
                 }
-
-                // const verifyShowTime = await this.showDatabase.getShow(startTime)
-          
-                // if(verifyShowTime?.start_time === startTime) {
-                //     throw new BaseError("Já existe uma banda marcada para esse horário", 401)
-                // }
 
                 if(weekDay !== DayWeek.DOMINGO && weekDay !== DayWeek.SABADO && weekDay !== DayWeek.SEXTA){
                     throw new BaseError("Só podemos marcar shows 'SEXTA', 'SABADO' e 'DOMINGO'", 422)
@@ -97,7 +81,7 @@ export class ShowBusiness  {
             }
         }
 
-        async getShowByWeekDayBusiness(weekDay: string): Promise<IShorByDay[]> {
+        async getShowByWeekDayBusiness(weekDay: string): Promise<IShorByDay[] | undefined> {
           
             try {
                 if(!weekDay) {

@@ -22,13 +22,13 @@ describe.skip( "testando o createUser da business",() =>{
              email: "email@email.com",
              password:  "password" ,
              role: UserRole.NORMAL
-           }
+           } 
 
-           await userBusiness.createUser(input)
+           await userBusiness.createUser(input);
             
         } catch (error: any) {
-            expect(error).toBeDefined()
-            expect(error.message).toBe("É necessário preencher todos os compos")
+            expect(error).toBeDefined();
+            expect(error.message).toBe("É necessário preencher todos os compos");
             expect(error.code).toBe(422);
         }
     });
@@ -44,10 +44,10 @@ describe.skip( "testando o createUser da business",() =>{
              role: UserRole.NORMAL
            }
 
-           await userBusiness.createUser(input)
+           await userBusiness.createUser(input);
             
         } catch (error: any) {
-            expect(error).toBeDefined()
+            expect(error).toBeDefined();
             expect(error.message).toBe("É necessário preencher todos os compos")
             expect(error.code).toBe(422);
         }
@@ -64,11 +64,11 @@ describe.skip( "testando o createUser da business",() =>{
              role: UserRole.NORMAL
            }
 
-           await userBusiness.createUser(input)
+           await userBusiness.createUser(input);
             
         } catch (error: any) {
-            expect(error).toBeDefined()
-            expect(error.message).toBe("É necessário preencher todos os compos")
+            expect(error).toBeDefined();
+            expect(error.message).toBe("É necessário preencher todos os compos");
             expect(error.code).toBe(422);
         }
     });
@@ -85,8 +85,8 @@ describe.skip( "testando o createUser da business",() =>{
            }
 
          const result = await userBusiness.createUser(input)
-         expect(result).toBeDefined()
-         expect(result).toEqual("token")
+         expect(result).toBeDefined();
+         expect(result).toEqual("token");
             
         } catch (error: any) {}
     });
