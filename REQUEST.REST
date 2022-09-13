@@ -1,0 +1,58 @@
+GET http://localhost:3000/band
+###
+// RETORNA TODAS AS BANDAS
+
+GET http://localhost:3000/band?name=vitor fernandes
+
+//ENPOINT QUE RETORNA DETALHE DA BANDA PASSA O NAME DA BANDA!
+
+###
+GET http://localhost:3000/show/SABADO
+
+// ENPOINT RETORNA TODOS SHOW POR DIA, PARA FAZER A BUSCA INFORME SE É SEXTA, SABADO, DOMINGO.
+###
+
+POST http://localhost:3000/user/signup
+Content-Type: application/json 
+
+// ENPOINT PARA CADASTRAR USUÁRIO
+{
+    "email": "vitin@email.com",
+    "name": "vitin",
+    "password": "vitin123",
+     "role": ""
+}
+###
+
+POST http://localhost:3000/user/login
+Content-Type: application/json 
+
+// ENDPOINT PARA FAZER LOGIN DE USUÁRIO NO SISMETAM LAMA!
+{
+    "email": "benjamin@email.com",
+    "password": "benjamin123"
+}
+###
+
+POST http://localhost:3000/band/cadastro
+Content-Type: application/json 
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDNlZTM5LTcwZTUtNDYxMi1iNDRmLWFjNWJlM2QwYjIxZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MjgyNDE4MiwiZXhwIjoxNjYyODI1MzgyfQ.ZQnETaJFI8dOGBKLZhDe8JYZMoB3dZsM32_uFfErTJ8
+
+// ENDPOINT PARA CADASTRO DA BANDA NO SISTEMA LAMA. PRECISA DO AUTHORIZATION DO TIPO ADMIN
+{
+    "name": "vitor fernandes",
+    "musicGenre": "piseiro",
+    "responsible": "fernandes"
+}
+
+###
+POST http://localhost:3000/show/create/cb6d05bb-a52d-4a2f-a6b1-c0f51915e75a
+Content-Type: application/json 
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDNlZTM5LTcwZTUtNDYxMi1iNDRmLWFjNWJlM2QwYjIxZSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MjgyNTQzNSwiZXhwIjoxNjYyODI2NjM1fQ.OO7USQz26iiRz3_7q90qnx3h1ngY0Ysu0o5DpAVWgxQ
+
+// ENDPOINT PARA MARCA O DIA DO SHOW NO SISTEMA LAMA. PRECISA DO AUTHORIZATION DO TIPO ADMIN
+{
+    "weekDay": "DOMINGO",
+    "startTime": 9.00,
+    "endTime": 11.00
+}
