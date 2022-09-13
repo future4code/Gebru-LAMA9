@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --watchAll",
-    "start": "tsc && node --inspect ./build/index.js",
+    "start": "tsc && node --inspect ./build/src/index.js",
     "dev": "tsnd --transpile-only --ignore-watch node_modules ./src/index.ts"
   },
   "keywords": [

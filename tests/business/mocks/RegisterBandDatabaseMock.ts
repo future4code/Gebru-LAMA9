@@ -16,14 +16,14 @@ export class RegisterBandDatabaseMock implements IRegisterBandsRepository {
         }
         return band
     }
-   async getRegisterBandbyId(name: string, id: string): Promise<IBand | undefined> {
+    async getRegisterBandbyId(name: string): Promise<IBand | undefined> {
         const band: IBand = {
             id: "id",
             name: "name",
             musicGenre: "strimusicGenreng",
             responsible: "responsible"
         }
-        if(band.name === name || band.id === id) {
+        if(band.name === name ) {
             return band
         } else {
           return undefined

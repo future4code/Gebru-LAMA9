@@ -17,14 +17,14 @@ describe.skip("Testando a camanda RegisterBandsBusiness", () => {
         try {
             expect.assertions(1)
             const name = "name"
-            const id = "id"
+         
             const band= {
                 id: "id",
                name: "name",
                musicGenre: "strimusicGenreng",
                responsible: "responsible"
             }
-            const result = await registerBandsBusiness.getBandById(name, id)
+            const result = await registerBandsBusiness.getBandById(name)
          
            expect(result).toContainEqual(band)
           
@@ -35,9 +35,9 @@ describe.skip("Testando a camanda RegisterBandsBusiness", () => {
         try {
             expect.assertions(3)
             const name = ""
-            const id = ""
+          
    
-            await registerBandsBusiness.getBandById(name, id)
+            await registerBandsBusiness.getBandById(name)
           
         } catch (error: any) {
             expect(error).toBeDefined()
